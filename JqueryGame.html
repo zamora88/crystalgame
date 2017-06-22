@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hangman</title>
+  <meta charset="utf-8">
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+<body>
+<div>
+  <h1>Crystals Game</h1>
+  <p id="gamephrase">Add the Crystals to get wealthy</p> 
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <img src="bluecrystal.jpg" alt="bluecrystal" class="bluecrystal">
+    </div>
+
+    <div class="col-sm-2">
+      <img src="yellowcrystal.jpg" alt="yellowcrystal" class="yellowcrystal">
+    </div>
+    
+    <div class="col-sm-2">
+      <img src="pinkcrystal.jpg"  alt ="pinkcrystal" class="pinkcrystal">
+   </div>
+
+    <div class="col-sm-2">
+      <img src="orangecrystal.jpg"  alt ="orangecrystal" class="orangecrystal">
+    </div>
+   </div> 
+
+  <div class="row">
+      <div class="col-sm-2">
+        <p id="points">Points:</p>
+        </div>
+      <div class="col-sm-2">
+        <p id="wins">Wins:</p>
+      
+      </div>
+
+         <div class="col-sm-2">
+         <p id="losses">Losses:</p>
+        </div>
+    
+    </div>
+  </div>
+
+
+
+  <div class="row">
+      <div class="col-sm-3">
+        <p id="scorebox">Your score is:</p>
+        </div>
+      </div>
+
+  <div class="row">
+      <div class="col-sm-3">
+        <p class="talley">0</p>
+      </div>
+</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+
+var totalPoints = 0;
+
+var losses = 0;
+
+var wins = 0;
+
+
+
+
+var computerRandomNumber =  Math.floor(Math.random() * (120 - 19) + 19); 
+
+
+
+
+
+    $(".bluecrystal").click(function(){
+
+
+      alert("you need to add more points");
+     
+    });
+
+     $(".yellowcrystal").click(function(){
+
+      alert("you need to add more points");
+       
+    });
+
+      $(".pinkcrystal").click(function(){
+
+        alert("you need to add more points");
+       
+    });
+
+       $(".orangecrystal").click(function(){
+
+        alert("you need to add more points");
+       
+    });
+
+       $(".talley").html(computerRandomNumber);
+
+
+</script>
+
+</body>
+</html>
