@@ -62,7 +62,7 @@ font-weight: bold;
 	font-size: 15px;
 	text-align: left;
 	opacity: 0.7;
-	margin-top: 20px;
+	margin: 20px;
 }
 
 #wins {
@@ -73,7 +73,7 @@ font-weight: bold;
 	font-size: 15px;
 	text-align: left;
 	opacity: 0.7;
-	margin-top: 20px;
+	margin: 20px;
 }
 
 #losses {
@@ -84,7 +84,7 @@ font-weight: bold;
 	font-size: 15px;
 	text-align: left;
 	opacity: 0.7;
-	margin-top: 20px;
+	margin: 20px;
 }
 
 #scorebox {
@@ -94,6 +94,8 @@ font-weight: bold;
 	text-align: left;
 	font-size: 15px;
 	opacity: 0.7;
+	margin-top: 20px;
+	padding: 30px;
 }
 
 
@@ -106,3 +108,5 @@ font-weight: bold;
 		text-align: center;
 		opacity: 0.7;
 }
+
+
