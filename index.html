@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Hangman</title>
+  <title>Crystals</title>
   <meta charset="utf-8">
 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,7 +12,7 @@
 <body>
 <div>
   <h1>Crystals Game</h1>
-  <p id="gamephrase">Add the Crystals to get wealthy</p> 
+  <p id="gamephrase">Add the Crystals for immortality </p> 
 </div>
 
 <div class="container">
@@ -35,13 +35,15 @@
    </div> 
 
   <div class="row">
-      <div class="col-sm-2" id="points">
-        <p class="totalPoints">Points:</p>
-        <p>0</p>
+      <div class="col-sm-2"  id="box1">
+        <p>Points:</p>
+        <p id="points">0</p>
+
+      
         </div>
       <div class="col-sm-2" id="wins">
-        <p class="totalWins">Wins:</p>
-        <p>0</p>
+        <p >Wins:</p>
+        <p class="totalWins">0</p>
       
       </div>
 
@@ -56,13 +58,7 @@
 
 
   <div class="row">
-      <div class="col-sm-3">
-        <p id="scorebox">Your score is:</p>
-        </div>
-      </div>
-
-  <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-7">
         <p class="talley">0</p>
       </div>
 </div>
@@ -73,47 +69,161 @@
 <script>
 
 
+
+     
+
+
+
+//Variables for game
+
 var totalPoints = 0;
+
+
 
 var losses = 0;
 
 var wins = 0;
 
+var guess = totalPoints;
 
-
+//Random number for computer to genereate to guess
 
 var computerRandomNumber =  Math.floor(Math.random() * (120 - 19) + 19); 
 
 
+//Random numbers for images
+var random1 = Math.floor(Math.random() * (12-1) + 1); 
+
+var random2 = Math.floor(Math.random() * (12-1) + 1); 
+
+var random3 = Math.floor(Math.random() * (12-1) + 1); 
+
+var random4 = Math.floor(Math.random() * (12-1) + 1); 
+
+    
+//Random numbers that are assigned to images are being clicked then added to the talley for bluecrystal
+    $("#points").html(totalPoints);
+
+    $(".bluecrystal").on("click", function(){
+
+      totalPoints += random1;
 
 
+    $("#points").html(totalPoints);
 
-    $(".bluecrystal").click(function(){
 
+   });
 
-      alert("you need to add more points");
-     
+    //Toggling the image
+        $(".bluecrystal").on("click",function(){
+        $(".bluecrystal").fadeToggle();
+        $(".bluecrystal").fadeToggle("fast");
+        $(".bluecrystal").fadeToggle(5000);
     });
 
-     $(".yellowcrystal").click(function(){
 
-      alert("you need to add more points");
+//Random numbers that are assigned to images are being clicked then added to the talley
+
+    $("#points").html(totalPoints);
+
+    $(".yellowcrystal").on("click", function(){
+
+      totalPoints += random2;
+
+    $("#points").html(totalPoints);
+
        
     });
 
-      $(".pinkcrystal").click(function(){
+       //Toggling the image
 
-        alert("you need to add more points");
+      $(".yellowcrystal").on("click", function(){
+        $(".yellowcrystal").fadeToggle();
+        $(".yellowcrystal").fadeToggle("fast");
+        $(".yellowcrystal").fadeToggle(5000);
+    });
+
+
+//Random numbers that are assigned to images are being clicked then added to the talley
+
+      $("#points").html(totalPoints);
+
+      $(".pinkcrystal").on("click", function(){
+
+          totalPoints += random3;
+
+
+      $("#points").html(totalPoints);
        
     });
 
-       $(".orangecrystal").click(function(){
+       //Toggling the image
 
-        alert("you need to add more points");
+        $(".pinkcrystal").on("click", function(){
+        $(".pinkcrystal").fadeToggle();
+        $(".pinkcrystal").fadeToggle("fast");
+        $(".pinkcrystal").fadeToggle(5000);
+
+
+    });
+
+        //Random numbers that are assigned to images are being clicked then added to the talley
+
+       $("#points").html(totalPoints);
+
+       $(".orangecrystal").on("click", function(){
+
+        totalPoints += random4;
+
+           $("#points").html(totalPoints);
        
+    });
+
+        //Toggling the image
+         $(".orangecrystal").on("click", function(){
+        $(".orangecrystal").fadeToggle();
+        $(".orangecrystal").fadeToggle("fast");
+        $(".orangecrystal").fadeToggle(5000);
     });
 
        $(".talley").html(computerRandomNumber);
+
+
+
+
+
+       function reset() {
+        clear(totalPoints);
+        clear(computerRandomNumber);
+      
+
+      }
+
+    
+   if (totalPoints === computerRandomNumber) {
+
+        wins++;
+       $("totalWins").html(wins); 
+
+         alert("You Win!")
+
+        reset();
+
+
+      } else if (totalPoints > computerRandomNumber){
+
+          losses--;
+         $("totalLosses").html(losses);
+
+        alert("You lose!")
+
+     
+
+        reset();
+      }
+    
+
+        
 
 
 </script>
