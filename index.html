@@ -58,7 +58,6 @@
 
 
   <div class="row">
-      <div class="col-sm-7">
         <p class="talley">0</p>
       </div>
 </div>
@@ -106,6 +105,7 @@ var random4 = Math.floor(Math.random() * (12-1) + 1);
 
     $(".bluecrystal").on("click", function(){
 
+
       totalPoints += random1;
 
 
@@ -116,6 +116,7 @@ var random4 = Math.floor(Math.random() * (12-1) + 1);
 
     //Toggling the image
         $(".bluecrystal").on("click",function(){
+          comparison();
         $(".bluecrystal").fadeToggle();
         $(".bluecrystal").fadeToggle("fast");
         $(".bluecrystal").fadeToggle(5000);
@@ -138,6 +139,7 @@ var random4 = Math.floor(Math.random() * (12-1) + 1);
        //Toggling the image
 
       $(".yellowcrystal").on("click", function(){
+        comparison();
         $(".yellowcrystal").fadeToggle();
         $(".yellowcrystal").fadeToggle("fast");
         $(".yellowcrystal").fadeToggle(5000);
@@ -160,6 +162,7 @@ var random4 = Math.floor(Math.random() * (12-1) + 1);
        //Toggling the image
 
         $(".pinkcrystal").on("click", function(){
+          comparison();
         $(".pinkcrystal").fadeToggle();
         $(".pinkcrystal").fadeToggle("fast");
         $(".pinkcrystal").fadeToggle(5000);
@@ -181,6 +184,7 @@ var random4 = Math.floor(Math.random() * (12-1) + 1);
 
         //Toggling the image
          $(".orangecrystal").on("click", function(){
+          comparison();
         $(".orangecrystal").fadeToggle();
         $(".orangecrystal").fadeToggle("fast");
         $(".orangecrystal").fadeToggle(5000);
@@ -193,34 +197,40 @@ var random4 = Math.floor(Math.random() * (12-1) + 1);
 
 
        function reset() {
-        clear(totalPoints);
-        clear(computerRandomNumber);
-      
+        totalPoints = 0;
+        $("#points").html(totalPoints);
 
       }
+
+
+      function comparison(){
 
     
    if (totalPoints === computerRandomNumber) {
 
-        wins++;
-       $("totalWins").html(wins); 
+        
+          wins++;
+       $(".totalWins").html(wins); 
 
          alert("You Win!")
 
-        reset();
+         reset();
+
+   
 
 
       } else if (totalPoints > computerRandomNumber){
 
-          losses--;
-         $("totalLosses").html(losses);
+            losses++;  
+         $(".totalLosses").html(losses);
 
         alert("You lose!")
 
-     
-
         reset();
+
+      
       }
+    }
     
 
         
